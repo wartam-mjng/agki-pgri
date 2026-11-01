@@ -1,10 +1,10 @@
-DEPLOY agki-pgri.wartam.web.id DI VPS
+DEPLOY pgri.wartam.web.id DI VPS
 ================================
 (VPS: Ubuntu 24.04, IP 43.156.129.225, Caddy. Jalankan dari laptop/SSH.)
 
 1. DNS
-   - Tambah A record: Host "agki-pgri" -> 43.156.129.225 (DNS only / proxy OFF).
-   - Tunggu sampai "nslookup agki-pgri.wartam.web.id" menjawab 43.156.129.225.
+   - Di zona wartam.web.id: tambah A record Host "pgri" -> 43.156.129.225 (DNS only / proxy OFF).
+   - Tunggu sampai "nslookup pgri.wartam.web.id" menjawab 43.156.129.225.
 
 2. Clone di VPS (cukup sekali)
    cd /home/ubuntu
@@ -17,7 +17,7 @@ DEPLOY agki-pgri.wartam.web.id DI VPS
    - Caddy akan mengambil sertifikat HTTPS sendiri (Let's Encrypt).
 
 4. Periksa
-   curl -sI https://agki-pgri.wartam.web.id/ | head -3
+   curl -sI https://pgri.wartam.web.id/ | head -3
    Harus menjawab HTTP/2 200.
 
 5. Update berikutnya (tiap ada push baru)

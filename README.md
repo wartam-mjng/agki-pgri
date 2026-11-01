@@ -1,7 +1,7 @@
 # AGKI PGRI — Wartam, S.Pd.
 
 Situs tulisan tentang lomba AGKI (Anugerah Guru Kreatif dan Inovatif) Wartam, S.Pd.,
-SMP Negeri 4 Majenang. Alamat: https://agki-pgri.wartam.web.id/
+SMP Negeri 4 Majenang. Alamat: https://pgri.wartam.web.id/
 
 ## Isi
 
