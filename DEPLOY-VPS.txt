@@ -1,0 +1,31 @@
+DEPLOY agki-pgri.wartam.web.id DI VPS
+================================
+(VPS: Ubuntu 24.04, IP 43.156.129.225, Caddy. Jalankan dari laptop/SSH.)
+
+1. DNS
+   - Tambah A record: Host "agki-pgri" -> 43.156.129.225 (DNS only / proxy OFF).
+   - Tunggu sampai "nslookup agki-pgri.wartam.web.id" menjawab 43.156.129.225.
+
+2. Clone di VPS (cukup sekali)
+   cd /home/ubuntu
+   git clone https://github.com/wartam-mjng/agki-pgri.git agki-pgri
+   sudo chmod -R a+rX /home/ubuntu/agki-pgri
+
+3. Caddy
+   - Salin isi caddy-agki-pgri.conf ke dalam Caddyfile (atau import berkasnya).
+   - sudo systemctl reload caddy
+   - Caddy akan mengambil sertifikat HTTPS sendiri (Let's Encrypt).
+
+4. Periksa
+   curl -sI https://agki-pgri.wartam.web.id/ | head -3
+   Harus menjawab HTTP/2 200.
+
+5. Update berikutnya (tiap ada push baru)
+   cd /home/ubuntu/agki-pgri
+   git pull
+   sudo chmod -R a+rX /home/ubuntu/agki-pgri
+   (Tidak perlu restart Caddy untuk berkas statis; muat ulang halaman di
+   peramban dengan Ctrl+Shift+R bila tampilan lama masih muncul.)
+
+CATATAN: jangan mengedit index.html langsung di /home/ubuntu/agki-pgri.
+Ubah di repo, push, lalu git pull di sini.
