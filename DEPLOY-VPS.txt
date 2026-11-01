@@ -9,7 +9,7 @@ DEPLOY pgri.wartam.web.id DI VPS
 2. Clone di VPS (cukup sekali)
    cd /home/ubuntu
    git clone https://github.com/wartam-mjng/agki-pgri.git agki-pgri
-   sudo chmod -R a+rX /home/ubuntu/agki-pgri
+   sudo chmod -R a+rX /home/ubuntu/pgri
 
 3. Caddy
    - Salin isi caddy-agki-pgri.conf ke dalam Caddyfile (atau import berkasnya).
@@ -21,11 +21,11 @@ DEPLOY pgri.wartam.web.id DI VPS
    Harus menjawab HTTP/2 200.
 
 5. Update berikutnya (tiap ada push baru)
-   cd /home/ubuntu/agki-pgri
+   cd /home/ubuntu/pgri
    git pull
-   sudo chmod -R a+rX /home/ubuntu/agki-pgri
+   sudo chmod -R a+rX /home/ubuntu/pgri
    (Tidak perlu restart Caddy untuk berkas statis; muat ulang halaman di
    peramban dengan Ctrl+Shift+R bila tampilan lama masih muncul.)
 
-CATATAN: jangan mengedit index.html langsung di /home/ubuntu/agki-pgri.
+CATATAN: jangan mengedit index.html langsung di /home/ubuntu/pgri.
 Ubah di repo, push, lalu git pull di sini.
