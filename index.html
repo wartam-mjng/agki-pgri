@@ -279,7 +279,7 @@ main.active{display:block}
         <li>Guru/admin mengatur username dan materi per murid dari Papan Interaktif Digital sebagai pusat kendali.</li>
         <li>Kuis interaktif terintegrasi dengan koreksi otomatis.</li>
       </ul>
-      <a class="btn" href="https://kelas.wartam.web.id/" target="_blank" rel="noopener">Buka KELANA Daring →</a>
+      <a class="btn" href="https://kelas.wartam.web.id/" target="_blank" rel="noopener" onclick="return kodeDemo()">Buka KELANA Daring →</a>
       <a class="btn" href="https://drive.google.com/file/d/1gr1nKOuqso9UwacqrpJilJpKz3-_07Tb/view?usp=drive_link" target="_blank" rel="noopener">Buka Naskah Karya Inovatif →</a>
     </div>
   </section>
@@ -513,6 +513,9 @@ main.active{display:block}
   });
   var h = (location.hash || "").replace("#", "");
   show(document.getElementById(h) ? h : "beranda");
+  window.kodeDemo = function(){
+    return confirm("Kode akses demo KELANA:\n\nKode akses untuk admin/guru: admindemo\nKode akses untuk user/murid: demo1, demo2, demo3, demo4, demo5\n\nKlik OK untuk membuka KELANA Daring.");
+  };
 })();
 </script>
 </body>
